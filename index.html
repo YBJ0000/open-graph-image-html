@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingjia Yang - Developer/Designer/DevOps/Debugger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #141414;
+      color: #FFFFFF;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* 背景光效 */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 25% 25%,
+          rgba(240, 240, 240, 0.1) 0%,
+          rgba(240, 240, 240, 0.05) 30%,
+          transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      padding: 2rem;
+    }
+
+    /* 左侧内容区域 */
+    .left-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem 0;
+    }
+
+    /* 主标题 */
+    .main-title {
+      font-size: 5rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.2),
+        0 0 60px rgba(255, 255, 255, 0.1);
+      line-height: 1;
+      margin-bottom: 2rem;
+    }
+
+    /* 左下角头像和信息 */
+    .bottom-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .name {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #FFFFFF;
+    }
+
+    .roles {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #B0B0B0;
+      line-height: 1.4;
+    }
+
+    /* 右侧人像区域 */
+    .right-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .main-photo {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(240, 240, 240, 0.1);
+      filter: brightness(1.1) contrast(1.1);
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        padding: 1rem;
+      }
+
+      .main-title {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .left-content {
+        align-items: center;
+        text-align: center;
+      }
+
+      .bottom-left {
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .right-content {
+        order: -1;
+        margin-bottom: 1rem;
+      }
+
+      .main-photo {
+        max-height: 60vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-title {
+        font-size: 2.5rem;
+      }
+
+      .container {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- 左侧内容 -->
+    <div class="left-content">
+      <!-- 主标题 -->
+      <h1 class="main-title">Bingjia Yang</h1>
+
+      <!-- 左下角头像和信息 -->
+      <div class="bottom-left">
+        <img src="Portrait.png" alt="Bingjia Yang Avatar" class="avatar">
+        <div class="info">
+          <div class="name">Bingjia Yang</div>
+          <div class="roles">Developer/Designer/DevOps/Debugger</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧人像 -->
+    <div class="right-content">
+      <img src="Photo.jpg" alt="Bingjia Yang Portrait" class="main-photo">
+    </div>
+  </div>
+</body>
+
+</html>
