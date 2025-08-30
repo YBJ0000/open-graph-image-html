@@ -17,27 +17,11 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #141414;
+      background: #101014;
       color: #FFFFFF;
       min-height: 100vh;
       overflow: hidden;
       position: relative;
-    }
-
-    /* 背景光效 */
-    body::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(ellipse at 25% 25%,
-          rgba(240, 240, 240, 0.1) 0%,
-          rgba(240, 240, 240, 0.05) 30%,
-          transparent 70%);
-      pointer-events: none;
-      z-index: 1;
     }
 
     .container {
@@ -70,9 +54,9 @@
       font-weight: 700;
       color: #FFFFFF;
       text-shadow:
-        0 0 20px rgba(255, 255, 255, 0.3),
-        0 0 40px rgba(255, 255, 255, 0.2),
-        0 0 60px rgba(255, 255, 255, 0.1);
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2),
+        0 0 15px rgba(255, 255, 255, 0.1);
       line-height: 1;
       margin-bottom: 2rem;
       margin-top: 6rem;
