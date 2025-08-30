@@ -1,0 +1,79 @@
+{
+  "designSystemName": "Cali Castle",
+  "style": {
+    "theme": "dark",
+    "palette": {
+      "primary": "#F0F0F0",
+      "background": "#141414",
+      "text_primary": "#FFFFFF",
+      "text_secondary": "#B0B0B0"
+    },
+    "typography": {
+      "font_family": "Inter, sans-serif",
+      "heading": {
+        "size": "5rem",
+        "weight": 700
+      },
+      "body": {
+        "size": "1rem",
+        "weight": 400
+      }
+    },
+    "effects": {
+      "light_source": "top_left",
+      "shadows": "soft, subtle, outer shadow for depth",
+      "blur": "soft, frosted-glass effect",
+      "glow": "subtle, white inner glow"
+    }
+  },
+  "structure": {
+    "components": [
+      {
+        "name": "Avatar",
+        "properties": {
+          "size": "48px",
+          "shape": "circle",
+          "border": "none"
+        }
+      },
+      {
+        "name": "TextLabel",
+        "properties": {
+          "color": "text_primary",
+          "font_size": "1rem",
+          "font_weight": 400
+        }
+      },
+      {
+        "name": "PrimaryHeading",
+        "properties": {
+          "text": "Cali Castle",
+          "font_size": "5rem",
+          "font_weight": 700,
+          "color": "text_primary",
+          "effect": "soft inner glow"
+        }
+      }
+    ],
+    "icons": [
+      {
+        "name": "AvatarIcon",
+        "style": "cartoon, illustrated"
+      }
+    ]
+  },
+  "layout": {
+    "alignment": "center",
+    "spacing": {
+      "unit": "8px",
+      "margins": "large",
+      "padding": "medium"
+    }
+  },
+  "principles": [
+    "minimalism",
+    "elegance",
+    "softness",
+    "subtle depth"
+  ]
+}
