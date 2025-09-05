@@ -150,6 +150,83 @@
       border: 4px solid rgba(255, 255, 255, 0.1);
     }
 
+    /* 网站链接样式 */
+    .website-link {
+      position: absolute;
+      top: 2rem;
+      right: 8rem;
+      z-index: 10;
+      transform: rotate(-8deg);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .website-link:hover {
+      transform: rotate(-5deg) scale(1.05);
+    }
+
+    .website-text {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      text-shadow:
+        0 0 20px rgba(0, 119, 181, 0.8),
+        0 0 40px rgba(0, 119, 181, 0.6),
+        0 0 60px rgba(0, 119, 181, 0.4),
+        3px 3px 0px rgba(0, 119, 181, 0.9),
+        6px 6px 0px rgba(0, 119, 181, 0.7),
+        9px 9px 0px rgba(0, 119, 181, 0.5);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 2px;
+      text-decoration: none;
+      display: block;
+      position: relative;
+    }
+
+    .website-text::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(45deg,
+          rgba(0, 119, 181, 0.3) 0%,
+          rgba(0, 119, 181, 0.1) 50%,
+          rgba(0, 119, 181, 0.3) 100%);
+      border-radius: 10px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .website-link:hover .website-text::before {
+      opacity: 1;
+    }
+
+    .website-text::after {
+      content: '🔗';
+      position: absolute;
+      top: -10px;
+      right: -15px;
+      font-size: 1rem;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.7;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
     /* 背景装饰效果 */
     .container::before {
       content: '';
@@ -261,6 +338,11 @@
       <div class="avatar-container">
         <img src="Portrait.png" alt="Bingjia Yang Avatar" class="avatar">
       </div>
+    </div>
+
+    <!-- 网站链接 -->
+    <div class="website-link">
+      <a href="https://ybj.au" target="_blank" class="website-text">ybj.au</a>
     </div>
   </div>
 </body>
