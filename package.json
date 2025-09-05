@@ -1,0 +1,22 @@
+{
+  "name": "linkedin-banner-generator",
+  "version": "1.0.0",
+  "description": "Generate LinkedIn cover banner from HTML",
+  "main": "generate-banner.js",
+  "scripts": {
+    "generate": "node generate-banner.js",
+    "install-deps": "npm install puppeteer"
+  },
+  "dependencies": {
+    "puppeteer": "^21.11.0"
+  },
+  "keywords": [
+    "linkedin",
+    "banner",
+    "image",
+    "generator",
+    "puppeteer"
+  ],
+  "author": "Bingjia Yang",
+  "license": "MIT"
+}
