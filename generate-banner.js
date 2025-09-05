@@ -39,10 +39,10 @@ async function generateBanner() {
 
     console.log('📸 开始截图...');
 
-    // 截图并保存
-    await page.screenshot({
+    // 截图并保存 - 只截取container区域
+    const containerElement = await page.$('.container');
+    await containerElement.screenshot({
       path: 'linkedin-banner.png',
-      fullPage: false,
       type: 'png'
     });
 
