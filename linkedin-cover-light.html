@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingjia Yang - LinkedIn Cover</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FFFFFF;
+      color: #FFFFFF;
+      width: 1584px;
+      height: 396px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background: #EFEFEB;
+    }
+
+    /* 内容区域 */
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* 主标题 */
+    .main-title {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2),
+        0 0 15px rgba(255, 255, 255, 0.1);
+      line-height: 1;
+      text-align: center;
+    }
+
+    /* 职位信息 */
+    .roles {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #B0B0B0;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* 头像区域 */
+    .avatar-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(240, 240, 240, 0.1);
+      border: 4px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 技术栈图标区域 */
+    .tech-stack {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 1;
+    }
+
+    .tech-stack.left {
+      left: 2rem;
+    }
+
+    .tech-stack.right {
+      right: 2rem;
+    }
+
+    .tech-icon {
+      width: 32px;
+      height: 32px;
+      filter: brightness(1.0);
+    }
+
+    /* 人像区域 */
+    .portrait {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .portrait.left {
+      left: 20rem;
+    }
+
+    .portrait.right {
+      right: 20rem;
+    }
+
+    .portrait.left-inner {
+      left: 8rem;
+    }
+
+    .portrait.right-inner {
+      right: 8rem;
+    }
+
+    .portrait img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(240, 240, 240, 0.1);
+      border: 4px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 网站链接样式 */
+    .website-link {
+      position: absolute;
+      top: 2rem;
+      right: 8rem;
+      z-index: 10;
+      transform: rotate(-8deg);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .website-link:hover {
+      transform: rotate(-5deg) scale(1.05);
+    }
+
+    .website-text {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      text-shadow:
+        0 0 20px rgba(0, 119, 181, 0.8),
+        0 0 40px rgba(0, 119, 181, 0.6),
+        0 0 60px rgba(0, 119, 181, 0.4),
+        3px 3px 0px rgba(0, 119, 181, 0.9),
+        6px 6px 0px rgba(0, 119, 181, 0.7),
+        9px 9px 0px rgba(0, 119, 181, 0.5);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 2px;
+      text-decoration: none;
+      display: block;
+      position: relative;
+    }
+
+    .website-text::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(45deg,
+          rgba(0, 119, 181, 0.3) 0%,
+          rgba(0, 119, 181, 0.1) 50%,
+          rgba(0, 119, 181, 0.3) 100%);
+      border-radius: 10px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .website-link:hover .website-text::before {
+      opacity: 1;
+    }
+
+    .website-text::after {
+      content: '🔗';
+      position: absolute;
+      top: -10px;
+      right: -15px;
+      font-size: 1rem;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.7;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    /* 背景装饰效果 */
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      background: radial-gradient(ellipse at 80% 50%,
+          rgba(240, 240, 240, 0.05) 0%,
+          rgba(240, 240, 240, 0.02) 40%,
+          transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* 响应式设计 - 针对较小屏幕 */
+    @media (max-width: 1600px) {
+      body {
+        transform: scale(0.8);
+        transform-origin: top left;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      body {
+        transform: scale(0.6);
+        transform-origin: top left;
+      }
+    }
+
+    @media (max-width: 800px) {
+      body {
+        transform: scale(0.4);
+        transform-origin: top left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- 左侧人像 -->
+    <div class="portrait left">
+      <img src="IMG_1256.jpg" alt="Portrait Left" />
+    </div>
+
+    <!-- 左侧内层人像 -->
+    <div class="portrait left-inner">
+      <img src="IMG_5269.JPG" alt="Portrait Left Inner" />
+    </div>
+
+    <!-- 右侧内层人像 -->
+    <div class="portrait right-inner">
+      <img src="IMG_6590.JPG" alt="Portrait Right Inner" />
+    </div>
+
+    <!-- 右侧人像 -->
+    <div class="portrait right">
+      <img src="IMG_9646.JPG" alt="Portrait Right" />
+    </div>
+
+    <!-- 左侧技术栈 -->
+    <div class="tech-stack left">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5"
+        class="tech-icon" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3"
+        class="tech-icon" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+        alt="JavaScript" class="tech-icon" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+        alt="TypeScript" class="tech-icon" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React"
+        class="tech-icon" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+        alt="Node.js" class="tech-icon" />
+      <img src="https://img.icons8.com/nolan/512/express-js.png" alt="Express.js" class="tech-icon" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg"
+        alt="Next.js" class="tech-icon" />
+    </div>
+
+    <!-- 右侧技术栈 -->
+    <div class="tech-stack right">
+      <img src="https://avatars.githubusercontent.com/u/17219288?s=200&v=4" alt="Prisma" class="tech-icon" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg"
+        alt="PostgreSQL" class="tech-icon" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker"
+        class="tech-icon" />
+      <img src="https://www.shareicon.net/data/2015/08/28/92257_copy_512x512.png" alt="AWS EC2" class="tech-icon" />
+      <img src="https://cdn.jim-nielsen.com/macos/512/figma-2021-05-05.png" alt="Figma" class="tech-icon" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python"
+        class="tech-icon" />
+      <img
+        src="https://e7.pngegg.com/pngimages/309/384/png-clipart-scikit-learn-python-computer-icons-scikit-machine-learning-learning-text-orange.png"
+        alt="Scikit-learn" class="tech-icon" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="TensorFlow"
+        class="tech-icon" />
+    </div>
+
+    <!-- 居中内容 -->
+    <div class="content">
+      <!-- 主标题 -->
+      <h1 class="main-title">Bingjia Yang</h1>
+
+      <!-- 职位信息 -->
+      <div class="roles">Developer/Designer/DevOps/Debugger</div>
+
+      <!-- 头像 -->
+      <div class="avatar-container">
+        <img src="Portrait.png" alt="Bingjia Yang Avatar" class="avatar">
+      </div>
+    </div>
+
+    <!-- 网站链接 -->
+    <div class="website-link">
+      <a href="https://ybj.au" target="_blank" class="website-text">ybj.au</a>
+    </div>
+  </div>
+</body>
+
+</html>
